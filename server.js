@@ -13,7 +13,7 @@ const corsOptions = {
   origin: [
     "http://localhost:3001",
     "http://127.0.0.1:3001",
-    "https://alexanpetrov.github.io/gastrograph/",
+    "https://alexanpetrov.github.io/gastrograph",
   ],
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
