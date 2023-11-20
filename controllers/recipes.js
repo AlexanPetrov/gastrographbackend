@@ -5,7 +5,7 @@ const getAllRecipes = async (req, res) => {
     const recipes = await Recipe.find();
     const adaptedRecipes = recipes.map((recipe) => {
       return {
-        id: recipe.id.toString(),
+        id: recipe._id.toString(),
         title: recipe.title,
         ingredients: recipe.ingredients,
         instructions: recipe.instructions,
