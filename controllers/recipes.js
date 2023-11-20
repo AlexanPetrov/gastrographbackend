@@ -3,10 +3,9 @@ const Recipe = require("../models/Recipe.js");
 const getAllRecipes = async (req, res) => {
   try {
     const recipes = await Recipe.find();
-    console.log("Recipes fetched:", recipes);
     const adaptedRecipes = recipes.map((recipe) => {
       return {
-        id: recipe._id.toString(),
+        id: recipe.id.toString(),
         title: recipe.title,
         ingredients: recipe.ingredients,
         instructions: recipe.instructions,
