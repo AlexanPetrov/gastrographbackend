@@ -9,6 +9,11 @@ module.exports = (transporter) => {
         const newContact = new Contact({ name, email, message });
         await newContact.save();
 
+        // Debugging: Log environment variables
+        console.log("Debug: SENDER_EMAIL: ", process.env.SENDER_EMAIL);
+        console.log("Debug: SENDER_PASSWORD: ", process.env.SENDER_PASSWORD);
+        //
+
         const mailOptions = {
           from: process.env.SENDER_EMAIL,
           to: process.env.RECEIVER_EMAIL,
