@@ -2,8 +2,10 @@ const Recipe = require("../models/Recipe.js");
 
 const getAllRecipes = async (req, res) => {
   try {
+    const specificRecipe = await Recipe.findById("65453216bfd7ace6f7d31f72");
+    console.log("Specific recipe fetched:", specificRecipe);
+
     const recipes = await Recipe.find();
-    console.log("Fetched Recipes from DB:", recipes);
     const adaptedRecipes = recipes.map((recipe) => {
       return {
         id: recipe._id.toString(),
