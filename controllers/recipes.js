@@ -4,7 +4,15 @@ const getAllRecipes = async (req, res) => {
   try {
     const recipes = await Recipe.find();
     const adaptedRecipes = recipes.map((recipe) => {
-      return { id: recipe._id, ...recipe._doc };
+      return {
+        id: recipe._id.toString(),
+        title: recipe.title,
+        ingredients: recipe.ingredients,
+        instructions: recipe.instructions,
+        author: recipe.author,
+        date: recipe.date.toISOString(),
+        imageURL: recipe.imageURL,
+      };
     });
     res.json(adaptedRecipes);
   } catch (error) {
