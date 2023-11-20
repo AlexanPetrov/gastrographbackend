@@ -2,9 +2,7 @@ const Recipe = require("../models/Recipe.js");
 
 const getAllRecipes = async (req, res) => {
   try {
-    console.log("Fetching recipes..."); // Add this log
     const recipes = await Recipe.find();
-    console.log("Fetched recipes:", recipes); // Add this log
     const adaptedRecipes = recipes.map((recipe) => {
       return {
         id: recipe._id.toString(),
@@ -18,7 +16,6 @@ const getAllRecipes = async (req, res) => {
     });
     res.json(adaptedRecipes);
   } catch (error) {
-    console.error("Error fetching recipes:", error); // Add this log
     res.status(500).json({ error: error.message });
   }
 };
