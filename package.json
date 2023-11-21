@@ -14,13 +14,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "express-rate-limit": "^7.1.4",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.3.0",
     "mongoose": "^7.5.0",
-    "morgan": "^1.10.0",
     "nodemailer": "^6.9.7",
-    "prettier": "^3.0.3",
-    "validator": "^13.11.0"
+    "prettier": "^3.0.3"
   }
 }
