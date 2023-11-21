@@ -4,7 +4,6 @@ module.exports = (transporter) => {
   return {
     submitContactForm: async (req, res) => {
       const { name, email, message } = req.body;
-
       try {
         const newContact = new Contact({ name, email, message });
         await newContact.save();
