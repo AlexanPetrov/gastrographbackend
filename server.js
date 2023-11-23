@@ -9,6 +9,14 @@ const app = express();
 
 require("dotenv").config();
 
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline';"
+  );
+  next();
+});
+
 const corsOptions = {
   origin: [
     "http://localhost:3001",
