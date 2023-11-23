@@ -73,7 +73,8 @@ exports.requestPasswordReset = async (req, res) => {
     user.resetTokenExpiry = resetTokenExpiry;
     await user.save();
 
-    const resetLink = `http://localhost:3001/new-password/${resetToken}`;
+    // const resetLink = `http://localhost:3001/new-password/${resetToken}`;
+    const resetLink = `https://gastrographbackend.onrender.com/new-password/${resetToken}`;
 
     await transporter.sendMail({
       to: email,
