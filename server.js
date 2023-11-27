@@ -15,6 +15,7 @@ const corsOptions = {
     "http://127.0.0.1:3001",
     "https://alexanpetrov.github.io/gastrograph",
     "https://alexanpetrov.github.io",
+    "https://alexanpetrov.github.io/gastrograph/reset-password",
   ],
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
