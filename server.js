@@ -14,6 +14,7 @@ const corsOptions = {
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "https://alexanpetrov.github.io/gastrograph",
+    "https://brilliant-cuchufli-19cf17.netlify.app",
   ],
   credentials: true,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
