@@ -67,14 +67,13 @@ exports.requestPasswordReset = async (req, res) => {
     }
 
     const resetToken = crypto.randomBytes(20).toString("hex");
-    const resetTokenExpiry = Date.now() + 3600000; // 1 hour from now
+    const resetTokenExpiry = Date.now() + 3600000;
 
     user.resetToken = resetToken;
     user.resetTokenExpiry = resetTokenExpiry;
     await user.save();
 
-    // const resetLink = `http://localhost:3001/new-password/${resetToken}`;
-    const resetLink = `https://alexanpetrov.github.io/gastrograph/new-password/${resetToken}`;
+    const resetLink = `https://brilliant-cuchufli-19cf17.netlify.app/new-password/${resetToken}`;
 
     await transporter.sendMail({
       to: email,
@@ -89,7 +88,6 @@ exports.requestPasswordReset = async (req, res) => {
   }
 };
 
-// Implement a function to handle actual password reset using the token
 exports.resetPassword = async (req, res) => {
   const { token, newPassword } = req.body;
 
